@@ -19,7 +19,8 @@ const Characters = () => {
             {/* /*fragmento*/}
            
             <h2><img className="character-img" src={character.image} alt="" />
-               {character.name}          
+               {character.name}
+            
             
                      
             
