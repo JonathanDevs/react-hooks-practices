@@ -7,6 +7,50 @@
   pointer-events: none;
 }
 
+.Characters h2{
+  min-height: 300px;
+    border: 1px solid #1e1e1e;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0px;
+    
+}
+.header{
+  margin-bottom: 40px;
+} 
+@media only screen and (min-width: 981px){
+  .Characters{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 15px;
+      margin: 0px;
+      row-gap: 15px;
+  }
+}
+@media only screen and (max-width: 980px){
+  .Characters{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+      margin: 0px;
+      row-gap: 15px;
+  }
+}
+@media only screen and (max-width: 767px){
+  .Characters{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+      margin: 0px;
+      row-gap: 15px;
+  }
+}
+@media only screen and (max-width: 575px){
+.Characters{
+  grid-template-columns: repeat(1, 1fr);
+}
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

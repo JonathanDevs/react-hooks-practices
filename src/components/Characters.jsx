@@ -22,4 +22,6 @@ const Characters = () => {
 
  }
 
+//  Reto crear una tarjeta presenta fotografia nombre y estilo, activar el darkmode con css
+
  export default Characters;
