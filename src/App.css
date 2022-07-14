@@ -14,11 +14,31 @@
     justify-content: center;
     display: flex;
     margin: 0px;
+    flex-direction: column;
     
 }
-.header{
+
+.Header{
   margin-bottom: 40px;
 } 
+.Modelight{
+  background-color: transparent;
+  height: 45px;
+  width: 125px;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+.Modedark{
+  background-color: transparent;
+  height: 45px;
+  width: 125px;
+  border-radius: 4px;  
+  font-weight: 500;
+  cursor: pointer;
+}
 @media only screen and (min-width: 981px){
   .Characters{
     display: grid;
@@ -35,6 +55,12 @@
     column-gap: 15px;
       margin: 0px;
       row-gap: 15px;
+  }
+  .Characters .character-img{
+  width: 100%;
+  }
+  .App{
+    padding: 0px 5px;
   }
 }
 @media only screen and (max-width: 767px){
