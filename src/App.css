@@ -10,8 +10,7 @@
 .Characters h2{
   min-height: 300px;
     border: 1px solid #1e1e1e;
-    align-items: center;
-    
+    align-items: center;    
     display: flex;
     margin: 0px;
     flex-direction: column;
@@ -21,40 +20,12 @@
 .Header{
   margin-bottom: 40px;
 } 
-/* .Modelight{
-  background-color: transparent;
-  height: 45px;
-  width: 125px;
-  border-radius: 4px;
-  margin-right: 10px;
-  font-weight: 500;
-  cursor: pointer;
 
-}
-.Modedark{
-  background-color: transparent;
-  height: 45px;
-  width: 125px;
-  border-radius: 4px;  
-  font-weight: 500;
-  cursor: pointer;
-  
-}
-.dark-mode{
-  background-color: black;
-  color: white;
-} */
-.darkMode{
-  background-color: black;
-  color: white;
-}
-.darkMode p{  
-  color: white;
-}
+
 @media only screen and (min-width: 981px){
   .Characters{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 15px;
       margin: 0px;
       row-gap: 15px;
