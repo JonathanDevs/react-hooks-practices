@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useReducer} from 'react';
+import React, {useState, useEffect, useReducer, useMemo} from 'react';
 
 const initialState = {
   favorites: []
@@ -20,6 +20,8 @@ const Characters = () => {
 
     const [characters, setCharacters] = useState([]);
     const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
+    // se encargara de la busqueda
+    const [search, setSearch] = useState('');
 
 
     useEffect(() =>{
@@ -31,6 +33,24 @@ const Characters = () => {
     const handleClick = favorite => {
       dispatch({type: 'ADD_TO_FAVORITE', payload: favorite })
     }
+    // se encargara de la busqueda
+    const handleSearch= (event) => {
+      setSearch(event.target.value)
+    }
+
+    // FILTRO PARA TRABAJAR LOS PERSONAJES A FILTRAR
+    // const filteredUsers = characters.filter((user) =>{
+    //   return user.name.toLowerCase().includes(search.toLowerCase());
+    // })
+
+    // para comenzar a usar useMemo y retorne los valores memorizados
+    const filteredUsers = useMemo(() =>
+       characters.filter((user) =>{
+    return user.name.toLowerCase().includes(search.toLowerCase());
+    }),
+    [characters, search]
+  )
+
     return(
         <div className="Characters">
           {favorites.favorites.map(favorite =>(
@@ -39,8 +59,12 @@ const Characters = () => {
               </li>
 
           ))}
+          {/* se encargara de la busqueda */}
+          <div className="Search">
+            <input type="text"value={search} onChange={handleSearch} />
+          </div>
           
-          {characters.map(character => (
+          {filteredUsers.map(character => (
             
             <div className="item" key={character.id}>      
           
