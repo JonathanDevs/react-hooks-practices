@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useReducer, useMemo, useRef} from 'react';
+import React, {useState, useEffect, useReducer, useMemo, useRef, useCallback} from 'react';
+import Search from './Search';
 
 const initialState = {
   favorites: []
@@ -34,9 +35,13 @@ const Characters = () => {
       dispatch({type: 'ADD_TO_FAVORITE', payload: favorite })
     }
     // se encargara de la busqueda
-    const handleSearch= () => {
+    // const handleSearch= () => {
+    //   setSearch(searchInput.current.value)
+    // }
+
+    const handleSearch = useCallback(() =>{
       setSearch(searchInput.current.value)
-    }
+    }, [])
 
     // FILTRO PARA TRABAJAR LOS PERSONAJES A FILTRAR
     // const filteredUsers = characters.filter((user) =>{
@@ -60,9 +65,7 @@ const Characters = () => {
 
           ))}
           {/* se encargara de la busqueda */}
-          <div className="Search">
-            <input type="text"value={search} ref={searchInput} onChange={handleSearch} />
-          </div>
+         <Search search={search} searchInput={searchInput} handleSearch={handleSearch} />
           
           {filteredUsers.map(character => (
             
